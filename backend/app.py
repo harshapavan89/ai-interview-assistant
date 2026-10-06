@@ -85,6 +85,14 @@ CRITICAL: Read the conversation history carefully. Only acknowledge what the can
 
 Keep it short, conversational, and adaptive!"""
 
+@app.route("/")
+def home():
+    return {
+        "status": "running",
+        "message": "AI Interview Assistant API is live"
+    }
+
+
 @app.route('/start-interview', methods=['POST'])
 def start_interview():
     global currentSubject, questions_counter, threads_id ,checkpointer,agent
