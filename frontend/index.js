@@ -5,7 +5,12 @@ let recordedBlob = null;
 let currentSubject = null;
 let isSpeaking = false;
 let currentAudio = null;
+const API_BASE =
+  "https://ai-interview-assistant-2-4s0f.onrender.com";
 
+const startInterviewApiUrl = `${API_BASE}/start-interview`;
+const submitAnswerApiUrl = `${API_BASE}/submit-answer`;
+const getFeedbackApiUrl = `${API_BASE}/get-feedback`;
 // DOM Elements
 const welcomeState = document.getElementById("welcomeState");
 const interviewState = document.getElementById("interviewState");
@@ -291,7 +296,7 @@ function stopRecording() {
 
 // ========== API FUNCTIONS ==========
 
-const startInterviewApiUrl = "http://127.0.0.1:5000/start-interview"; // Replace with your actual API endpoint
+ // Replace with your actual API endpoint
 
 
 async function startInterview() {
@@ -326,7 +331,7 @@ async function startInterview() {
     }
 }
 
-const submitAnswerApiUrl = " http://127.0.0.1:5000/submit-answer";
+
 async function submitAnswer() {
     if (!recordedBlob) return;
 
@@ -397,7 +402,7 @@ async function endInterview() {
     await getFeedback();
 }
 
-const getFeedbackApiUrl = "http://127.0.0.1:5000/get-feedback"; // Replace with your actual API endpoint
+ // Replace with your actual API endpoint
 
 async function getFeedback() {
     showFeedbackSection();
